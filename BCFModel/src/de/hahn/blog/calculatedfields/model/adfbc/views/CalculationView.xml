@@ -75,4 +75,12 @@
     EntityAttrName="Durationtime"
     EntityUsage="Calculation"
     AliasName="DURATIONTIME"/>
+  <ViewAttribute
+    Name="Durationtimestamp"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="Durationtimestamp"
+    EntityUsage="Calculation"
+    AliasName="DURATIONTIMESTAMP"/>
 </ViewObject>

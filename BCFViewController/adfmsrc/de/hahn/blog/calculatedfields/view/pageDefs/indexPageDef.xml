@@ -55,5 +55,10 @@
     <action IterBinding="CalculationView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="CalculationView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="CalculationView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Durationtimestamp">
+      <AttrNames>
+        <Item Value="Durationtimestamp"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

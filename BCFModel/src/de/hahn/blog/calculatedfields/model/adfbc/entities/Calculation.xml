@@ -85,14 +85,28 @@
         SQLType="TIMESTAMP"
         Type="java.sql.Timestamp"
         ColumnType="TIMESTAMP"
-        TableName="CALCULATION"/>
+        TableName="CALCULATION">
+        <Properties>
+            <SchemaBasedProperties>
+                <AUTOSUBMIT
+                    Value="true"/>
+            </SchemaBasedProperties>
+        </Properties>
+    </Attribute>
     <Attribute
         Name="Endtimestamp"
         ColumnName="ENDTIMESTAMP"
         SQLType="TIMESTAMP"
         Type="java.sql.Timestamp"
         ColumnType="TIMESTAMP"
-        TableName="CALCULATION"/>
+        TableName="CALCULATION">
+        <Properties>
+            <SchemaBasedProperties>
+                <AUTOSUBMIT
+                    Value="true"/>
+            </SchemaBasedProperties>
+        </Properties>
+    </Attribute>
     <Attribute
         Name="Durationint"
         ColumnName="DURATION_INT"
@@ -130,6 +144,27 @@
                 Type="notify"/>
             <Item
                 Value="Starttime"
+                Type="notify"/>
+        </Dependencies>
+    </Attribute>
+    <Attribute
+        Name="Durationtimestamp"
+        ColumnName="DURATIONTIMESTAMP"
+        SQLType="DATE"
+        Type="java.lang.Long"
+        ColumnType="DATE"
+        IsPersistent="false"
+        IsQueriable="false">
+        <TransientExpression
+            trustMode="untrusted"><![CDATA[if (Endtimestamp == null) {return 0} else {return (Endtimestamp.getTime()-Starttimestamp.getTime())/1000}]]></TransientExpression>
+        <RecalcCondition
+            trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+        <Dependencies>
+            <Item
+                Value="Endtimestamp"
+                Type="notify"/>
+            <Item
+                Value="Starttimestamp"
                 Type="notify"/>
         </Dependencies>
     </Attribute>

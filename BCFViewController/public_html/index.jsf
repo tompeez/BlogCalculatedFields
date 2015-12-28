@@ -49,15 +49,15 @@
                             </af:inputDate>
                             <af:inputDate value="#{bindings.Starttimestamp.inputValue}" label="#{bindings.Starttimestamp.hints.label}"
                                           required="#{bindings.Starttimestamp.hints.mandatory}" columns="#{bindings.Starttimestamp.hints.displayWidth}"
-                                          shortDesc="#{bindings.Starttimestamp.hints.tooltip}" id="id3">
+                                          shortDesc="#{bindings.Starttimestamp.hints.tooltip}" id="id3" autoSubmit="true" converter="javax.faces.DateTime">
                                 <f:validator binding="#{bindings.Starttimestamp.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.Starttimestamp.format}"/>
+                                <af:convertDateTime pattern="#{bindings.Starttimestamp.format}" type="both" timeStyle="full"/>
                             </af:inputDate>
                             <af:inputDate value="#{bindings.Endtimestamp.inputValue}" label="#{bindings.Endtimestamp.hints.label}"
                                           required="#{bindings.Endtimestamp.hints.mandatory}" columns="#{bindings.Endtimestamp.hints.displayWidth}"
-                                          shortDesc="#{bindings.Endtimestamp.hints.tooltip}" id="id4">
+                                          shortDesc="#{bindings.Endtimestamp.hints.tooltip}" id="id4" autoSubmit="true">
                                 <f:validator binding="#{bindings.Endtimestamp.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.Endtimestamp.format}"/>
+                                <af:convertDateTime pattern="#{bindings.Endtimestamp.format}" type="both" timeStyle="full"/>
                             </af:inputDate>
                             <af:inputText value="#{bindings.Durationint.inputValue}" label="#{bindings.Durationint.hints.label}"
                                           required="#{bindings.Durationint.hints.mandatory}" columns="#{bindings.Durationint.hints.displayWidth}"
@@ -72,6 +72,13 @@
                                           readOnly="true">
                                 <f:validator binding="#{bindings.Durationtime.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.Durationtime.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Durationtimestamp.inputValue}" label="#{bindings.Durationtimestamp.hints.label}"
+                                          required="#{bindings.Durationtimestamp.hints.mandatory}" columns="#{bindings.Durationtimestamp.hints.displayWidth}"
+                                          maximumLength="#{bindings.Durationtimestamp.hints.precision}" shortDesc="#{bindings.Durationtimestamp.hints.tooltip}"
+                                          id="it6" readOnly="true">
+                                <f:validator binding="#{bindings.Durationtimestamp.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Durationtimestamp.format}"/>
                             </af:inputText>
                             <f:facet name="footer">
                                 <af:panelGroupLayout layout="vertical" id="pgl2">
