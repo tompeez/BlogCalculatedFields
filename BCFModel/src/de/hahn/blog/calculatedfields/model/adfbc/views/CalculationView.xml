@@ -59,4 +59,12 @@
     EntityAttrName="Endtimestamp"
     EntityUsage="Calculation"
     AliasName="ENDTIMESTAMP"/>
+  <ViewAttribute
+    Name="Durationint"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="Durationint"
+    EntityUsage="Calculation"
+    AliasName="DURATION_INT"/>
 </ViewObject>

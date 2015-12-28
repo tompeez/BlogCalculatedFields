@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.9.1" id="indexPageDef" Package="de.hahn.blog.calculatedfields.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CalculationView1" RangeSize="25" DataControl="BCFAppModuleDataControl" id="CalculationView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Startint">
+      <AttrNames>
+        <Item Value="Startint"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Endint">
+      <AttrNames>
+        <Item Value="Endint"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Starttime">
+      <AttrNames>
+        <Item Value="Starttime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Endtime">
+      <AttrNames>
+        <Item Value="Endtime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Starttimestamp">
+      <AttrNames>
+        <Item Value="Starttimestamp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Endtimestamp">
+      <AttrNames>
+        <Item Value="Endtimestamp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Durationint">
+      <AttrNames>
+        <Item Value="Durationint"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CalculationView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CalculationView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CalculationView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CalculationView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>
