@@ -37,13 +37,13 @@
                             </af:inputText>
                             <af:inputDate value="#{bindings.Starttime.inputValue}" label="#{bindings.Starttime.hints.label}"
                                           required="#{bindings.Starttime.hints.mandatory}" columns="#{bindings.Starttime.hints.displayWidth}"
-                                          shortDesc="#{bindings.Starttime.hints.tooltip}" id="id1">
+                                          shortDesc="#{bindings.Starttime.hints.tooltip}" id="id1" autoSubmit="true">
                                 <f:validator binding="#{bindings.Starttime.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.Starttime.format}"/>
                             </af:inputDate>
                             <af:inputDate value="#{bindings.Endtime.inputValue}" label="#{bindings.Endtime.hints.label}"
                                           required="#{bindings.Endtime.hints.mandatory}" columns="#{bindings.Endtime.hints.displayWidth}"
-                                          shortDesc="#{bindings.Endtime.hints.tooltip}" id="id2">
+                                          shortDesc="#{bindings.Endtime.hints.tooltip}" id="id2" autoSubmit="true">
                                 <f:validator binding="#{bindings.Endtime.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.Endtime.format}"/>
                             </af:inputDate>
@@ -65,6 +65,13 @@
                                           readOnly="true">
                                 <f:validator binding="#{bindings.Durationint.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.Durationint.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Durationtime.inputValue}" label="#{bindings.Durationtime.hints.label}"
+                                          required="#{bindings.Durationtime.hints.mandatory}" columns="#{bindings.Durationtime.hints.displayWidth}"
+                                          maximumLength="#{bindings.Durationtime.hints.precision}" shortDesc="#{bindings.Durationtime.hints.tooltip}" id="it5"
+                                          readOnly="true">
+                                <f:validator binding="#{bindings.Durationtime.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Durationtime.format}"/>
                             </af:inputText>
                             <f:facet name="footer">
                                 <af:panelGroupLayout layout="vertical" id="pgl2">

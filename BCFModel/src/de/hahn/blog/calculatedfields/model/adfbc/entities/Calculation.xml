@@ -25,28 +25,60 @@
         SQLType="NUMERIC"
         Type="java.math.BigDecimal"
         ColumnType="NUMBER"
-        TableName="CALCULATION"/>
+        TableName="CALCULATION">
+        <Properties>
+            <SchemaBasedProperties>
+                <AUTOSUBMIT
+                    Value="true"/>
+            </SchemaBasedProperties>
+        </Properties>
+    </Attribute>
     <Attribute
         Name="Endint"
         ColumnName="ENDINT"
         SQLType="NUMERIC"
         Type="java.math.BigDecimal"
         ColumnType="NUMBER"
-        TableName="CALCULATION"/>
+        TableName="CALCULATION">
+        <Properties>
+            <SchemaBasedProperties>
+                <AUTOSUBMIT
+                    Value="true"/>
+            </SchemaBasedProperties>
+        </Properties>
+    </Attribute>
     <Attribute
         Name="Starttime"
         ColumnName="STARTTIME"
         SQLType="DATE"
         Type="java.sql.Timestamp"
         ColumnType="DATE"
-        TableName="CALCULATION"/>
+        TableName="CALCULATION">
+        <Properties>
+            <SchemaBasedProperties>
+                <CONTROLTYPE
+                    Value="date"/>
+                <AUTOSUBMIT
+                    Value="true"/>
+            </SchemaBasedProperties>
+        </Properties>
+    </Attribute>
     <Attribute
         Name="Endtime"
         ColumnName="ENDTIME"
         SQLType="DATE"
         Type="java.sql.Timestamp"
         ColumnType="DATE"
-        TableName="CALCULATION"/>
+        TableName="CALCULATION">
+        <Properties>
+            <SchemaBasedProperties>
+                <CONTROLTYPE
+                    Value="date"/>
+                <AUTOSUBMIT
+                    Value="true"/>
+            </SchemaBasedProperties>
+        </Properties>
+    </Attribute>
     <Attribute
         Name="Starttimestamp"
         ColumnName="STARTTIMESTAMP"
@@ -69,16 +101,35 @@
         ColumnType="NUMBER"
         IsPersistent="false"
         IsQueriable="false">
-        <TransientExpression
-            trustMode="trusted"><![CDATA[if (Endint == null) {return 0} else {return Endint-Startint}]]></TransientExpression>
-        <RecalcCondition
-            trustMode="trusted"><![CDATA[true]]></RecalcCondition>
+        <TransientExpression><![CDATA[if (Endint == null) {return 0} else {return Endint-Startint}]]></TransientExpression>
+        <RecalcCondition><![CDATA[true]]></RecalcCondition>
         <Dependencies>
             <Item
                 Value="Endint"
                 Type="notify"/>
             <Item
                 Value="Startint"
+                Type="notify"/>
+        </Dependencies>
+    </Attribute>
+    <Attribute
+        Name="Durationtime"
+        ColumnName="DURATIONTIME"
+        SQLType="NUMERIC"
+        Type="java.lang.Long"
+        ColumnType="LONGINT"
+        IsPersistent="false"
+        IsQueriable="false">
+        <TransientExpression
+            trustMode="untrusted"><![CDATA[if (Endtime == null) {return 0} else {return Endtime-Starttime}]]></TransientExpression>
+        <RecalcCondition
+            trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+        <Dependencies>
+            <Item
+                Value="Endtime"
+                Type="notify"/>
+            <Item
+                Value="Starttime"
                 Type="notify"/>
         </Dependencies>
     </Attribute>

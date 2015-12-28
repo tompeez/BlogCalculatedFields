@@ -67,4 +67,12 @@
     EntityAttrName="Durationint"
     EntityUsage="Calculation"
     AliasName="DURATION_INT"/>
+  <ViewAttribute
+    Name="Durationtime"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="Durationtime"
+    EntityUsage="Calculation"
+    AliasName="DURATIONTIME"/>
 </ViewObject>

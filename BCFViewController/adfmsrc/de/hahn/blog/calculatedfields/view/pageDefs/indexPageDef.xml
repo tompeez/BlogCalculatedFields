@@ -3,7 +3,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="CalculationView1" RangeSize="25" DataControl="BCFAppModuleDataControl" id="CalculationView1Iterator"/>
+    <iterator RangeSize="25" DataControl="BCFAppModuleDataControl" id="CalculationView1Iterator" Binds="CalculationView1"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CalculationView1Iterator" id="Id">
@@ -44,6 +44,11 @@
     <attributeValues IterBinding="CalculationView1Iterator" id="Durationint">
       <AttrNames>
         <Item Value="Durationint"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CalculationView1Iterator" id="Durationtime">
+      <AttrNames>
+        <Item Value="Durationtime"/>
       </AttrNames>
     </attributeValues>
     <action IterBinding="CalculationView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
