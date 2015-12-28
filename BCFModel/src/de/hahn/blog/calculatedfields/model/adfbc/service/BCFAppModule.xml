@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BCFAppModule"
+  Version="12.1.3.9.1"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="CalculationView1"
+    ViewObjectName="de.hahn.blog.calculatedfields.model.adfbc.views.CalculationView"/>
+</AppModule>
